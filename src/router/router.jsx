@@ -8,6 +8,7 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import Profile from "../pages/Profile";
 import Setting from "../pages/Setting";
 import ErrorPage from "../pages/ErrorPage";
+import Edit from "../pages/Edit";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,12 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile />,
+        children: [
+          {
+            path: "edit",
+            element: <Edit />,
+          },
+        ],
       },
       {
         path: "setting",
