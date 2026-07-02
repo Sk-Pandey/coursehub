@@ -9,6 +9,8 @@ import Profile from "../pages/Profile";
 import Setting from "../pages/Setting";
 import ErrorPage from "../pages/ErrorPage";
 import Edit from "../pages/Edit";
+import Users from "../pages/Users";
+import Course from "../pages/Course";
 
 const router = createBrowserRouter([
   {
@@ -40,16 +42,22 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile />,
-        children: [
-          {
-            path: "edit",
-            element: <Edit />,
-          },
-        ],
       },
       {
-        path: "setting",
+        path: "edit",
+        element: <Edit />,
+      },
+      {
+        path: "settings",
         element: <Setting />,
+      },
+      {
+        path: "users",
+        element: <Users />,
+      },
+      {
+        path: "courses",
+        element: <Course />,
       },
     ],
   },
