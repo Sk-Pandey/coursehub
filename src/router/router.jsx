@@ -11,6 +11,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Edit from "../pages/Edit";
 import Users from "../pages/Users";
 import Course from "../pages/Course";
+import CourseDetail from "../pages/CourseDetail";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "courses",
         element: <Course />,
+      },
+      {
+        path: "courses/:courseId",
+        element: <CourseDetail />,
       },
     ],
   },
