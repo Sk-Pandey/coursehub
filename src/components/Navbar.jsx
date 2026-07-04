@@ -19,10 +19,9 @@ const Navbar = () => {
           About
         </NavLink>
         <NavLink className={navLinkClasses} to="/student/login">
-          login
+          login/logout
         </NavLink>
       </nav>
-      <h1>{user ? user.name : "Login"}</h1>
     </>
   );
 };
