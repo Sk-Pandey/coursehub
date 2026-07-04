@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
+  const { setUser } = useContext(AuthContext);
   const handleLogin = () => {
+    setUser({
+      name: "Shashikant",
+
+      role: "Student",
+    });
     navigate("/dashboard");
   };
   return (
