@@ -6,7 +6,7 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const { setUser } = useContext(AuthContext);
   const handleLogout = () => {
-    setUser({});
+    setUser(null);
     navigate("/student/login");
   };
   return (

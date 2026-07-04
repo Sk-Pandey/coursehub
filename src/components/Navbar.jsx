@@ -22,7 +22,7 @@ const Navbar = () => {
           login
         </NavLink>
       </nav>
-      <h1>{user.name}</h1>
+      <h1>{user ? user.name : "Login"}</h1>
     </>
   );
 };
