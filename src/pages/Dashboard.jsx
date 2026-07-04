@@ -6,8 +6,8 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const { setUser } = useContext(AuthContext);
   const handleLogout = () => {
-    localStorage.removeItem("user");
     setUser(null);
+    localStorage.removeItem("user");
     navigate("/student/login");
   };
   return (
