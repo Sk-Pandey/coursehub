@@ -27,7 +27,6 @@ const Navbar = () => {
     localStorage.removeItem("user");
   };
   const { user, setUser } = useContext(AuthContext);
-  console.log("Navbar User:", user);
 
   return (
     <>
