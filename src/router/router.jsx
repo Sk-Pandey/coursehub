@@ -12,6 +12,7 @@ import Edit from "../pages/Edit";
 import Users from "../pages/Users";
 import Course from "../pages/Course";
 import CourseDetail from "../pages/CourseDetail";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,12 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <DashboardLayout />,
+
+    element: (
+      <ProtectedRoute>
+        <DashboardLayout />
+      </ProtectedRoute>
+    ),
     children: [
       {
         index: true,

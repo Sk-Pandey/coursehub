@@ -14,11 +14,21 @@ const Navbar = () => {
 
       role: "Student",
     });
+    localStorage.setItem(
+      "user",
+      JSON.stringify({
+        name: "Shashikant",
+        role: "Student",
+      }),
+    );
   };
   const handleLogout = () => {
     setUser(null);
+    localStorage.removeItem("user");
   };
   const { user, setUser } = useContext(AuthContext);
+  console.log("Navbar User:", user);
+
   return (
     <>
       <nav className="flex justify-around py-4 font-bold text-2xl">
