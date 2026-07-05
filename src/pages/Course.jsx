@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
+import CourseForm from "../components/CourseForm";
 
 const Course = () => {
   const navigate = useNavigate();
@@ -42,6 +43,7 @@ const Course = () => {
   }
   return (
     <div className="flex flex-wrap justify-around item-center gap-20">
+      <CourseForm />
       {courses.map((course) => (
         <div
           key={course.id}
