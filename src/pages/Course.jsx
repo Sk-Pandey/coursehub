@@ -6,7 +6,23 @@ const Course = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const fetchCourse = async () => {
+      try {
+        const response = await fetch(
+          " https://jsonplaceholder.typicode.com/users",
+        );
+        const data = await response.json();
+        setCourses(data);
+      } catch {
+        setError("Somthing went wrong");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCourse();
+  }, []);
 
   const handleNavigate = (id) => {
     navigate(`/dashboard/courses/${id}`);
