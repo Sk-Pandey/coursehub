@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
+import useFetch from "../hooks/useFetch";
 const CourseDetail = () => {
-  const { courseId } = useParams();
+  /* 
 
   const [course, setCourse] = useState(null);
 
@@ -25,7 +25,14 @@ const CourseDetail = () => {
       }
     };
     fetchDetail();
-  }, [courseId]);
+  }, [courseId]); */
+
+  const { courseId } = useParams();
+  const {
+    data: course,
+    loading,
+    error,
+  } = useFetch(`https://jsonplaceholder.typicode.com/users/${courseId}`);
   if (loading) {
     return <h1>Loading...</h1>;
   }

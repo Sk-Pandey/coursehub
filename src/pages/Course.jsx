@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
 
 const Course = () => {
   const navigate = useNavigate();
-  const [courses, setCourses] = useState([]);
+  /* const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   useEffect(() => {
@@ -22,7 +23,12 @@ const Course = () => {
     };
 
     fetchCourse();
-  }, []);
+  }, []); */
+  const {
+    data: courses,
+    loading,
+    error,
+  } = useFetch("https://jsonplaceholder.typicode.com/users");
 
   const handleNavigate = (id) => {
     navigate(`/dashboard/courses/${id}`);
